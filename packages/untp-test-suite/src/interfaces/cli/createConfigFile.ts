@@ -44,7 +44,7 @@ const mapTypesAndVersions = async () => {
       dataPath: '',
     }));
 
-    return mapped;
+    return { credentials: mapped };
   } catch (err) {
     console.error(err);
     return [];
