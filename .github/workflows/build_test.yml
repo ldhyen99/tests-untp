@@ -31,9 +31,12 @@ jobs:
       - name: Check linting
         run: yarn lint
 
+      - name: Build
+        run: yarn build
+
       - name: Run tests
         run: |
-          yarn jest --changedSince=origin/next --ci --json --coverage --testLocationInResults --outputFile=report.json
+          yarn run test --changedSince=origin/next --ci --json --coverage --testLocationInResults --outputFile=report.json
 
       - name: Coverage
         uses: artiomtr/jest-coverage-report-action@v2
