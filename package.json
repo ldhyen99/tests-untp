@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "copy-config": "cp app-config.json packages/mock-app/src/constants/app-config.json && cp app-config.json packages/components/src/constants/app-config.json",
-    "copy-config-test": "cp app-config.e2e.json packages/mock-app/src/constants/app-config.json && cp app-config.e2e.json packages/components/src/constants/app-config.json && cp app-config.e2e.json cypress/fixtures/app-config.json",
+    "copy-config-test": "cp cypress/fixtures/app-config.json packages/mock-app/src/constants/app-config.json && cp cypress/fixtures/app-config.json packages/components/src/constants/app-config.json",
     "start": "yarn copy-config && cd packages/mock-app && yarn start",
     "start:e2e-test": "yarn copy-config-test && cd packages/mock-app && yarn start",
     "start:untp-playground": "cd packages/untp-playground && PORT=4001 yarn dev",
@@ -25,6 +25,8 @@
     "test:vc-test-suite": "cd packages/vc-test-suite && yarn run test",
     "test:untp-playground": "cd packages/untp-playground && yarn run test",
     "test:integration:untp-test-suite": "cd packages/untp-test-suite && yarn run test:integration",
+    "test:run-cypress":"cd e2e && yarn cypress run",
+    "test:open-cypress":"cd e2e && yarn cypress open",
     "storybook:components": "cd packages/components && yarn run storybook",
     "storybook:mock-app": "cd packages/mock-app && yarn run storybook",
     "untp": "node ./packages/untp-test-suite/build/interfaces/cli/cli.js",
